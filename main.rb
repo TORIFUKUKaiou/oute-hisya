@@ -21,7 +21,7 @@ king_diffs   = king.diffs
 rook_diffs   = rook.diffs
 bishop_diffs = bishop.diffs
 
-# キーがPosition(初期位置)、Valueが動ける範囲が配列のhash
+# キーがPosition(初期位置)、値が移動可能なPositionが配列になっているHash
 king_movable_positions   = Hash.new {|h, position| h[position] = []}
 rook_movable_positions   = Hash.new {|h, position| h[position] = []}
 bishop_movable_positions = Hash.new {|h, position| h[position] = []}
