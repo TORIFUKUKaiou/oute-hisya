@@ -53,7 +53,9 @@ king_rook_result_ary = []
 positions.permutation(2).to_a.each do |p1, p2|
   # 角の初期位置
   positions.each do |bishop_position|
-    if king_movable_positions[p1].include?(bishop_position) || rook_movable_positions[p2].include?(bishop_position)
+    if bishop_position == p1 || bishop_position == p2
+      # 玉 or 飛車の上に角はおけないのでスキップ
+    elsif king_movable_positions[p1].include?(bishop_position) || rook_movable_positions[p2].include?(bishop_position)
       # 玉 or 飛車が動いたら角を取れる場合は除外
     else
       # 角が動くと玉と飛車の両取りになる位置に配置できるか?
@@ -75,7 +77,9 @@ rook_king_result_ary = []
 positions.permutation(2).to_a.each do |p1, p2|
   # 角の初期位置
   positions.each do |bishop_position|
-    if king_movable_positions[p2].include?(bishop_position) || rook_movable_positions[p1].include?(bishop_position)
+    if bishop_position == p1 || bishop_position == p2
+      # 玉 or 飛車の上に角はおけないのでスキップ
+    elsif king_movable_positions[p2].include?(bishop_position) || rook_movable_positions[p1].include?(bishop_position)
       # 王 or 飛車が動いたら角を取れる場合は除外
     else
       # 角が動くと王と飛車の両取りになる位置に配置できるか?
