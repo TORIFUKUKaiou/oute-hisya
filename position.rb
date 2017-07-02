@@ -30,5 +30,9 @@ class Position
     "#{x}#{KANSUJI_HASH[y]}"
   end
 
+  def <=>(other)
+    [x, y] <=> [other.x, other.y]
+  end
+
   alias_method :==, :eql?
 end

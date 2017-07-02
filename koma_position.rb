@@ -23,7 +23,7 @@ class KomaPosition
   end
 
   def <=>(other)
-    [position.x, position.y] <=> [other.position.x, other.position.y]
+    position <=> other.position
   end
 
   alias_method :==, :eql?
