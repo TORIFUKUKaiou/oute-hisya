@@ -7,6 +7,6 @@ class Result
   end
 
   def to_s
-    "#{@pair.to_s}#{@bishop_position.to_s}"
+    "#{@pair}#{@bishop_position}"
   end
 end
